@@ -1,7 +1,10 @@
 # Hydrogen Atom Wave Function Animation
 
+<center>
+
 ![Figure_1](https://github.com/at0m741/Hydrogen-Wavefunction-Electron-Density/assets/20189027/d64d0e4d-aca2-4b16-b106-f2c9f9b3acdd)
 
+</center>
 
 This repository contains a Python script for calculating and animating the wave function of a hydrogen atom in a 3D plot. It utilizes the `numpy`, `matplotlib`, and `scipy` libraries for calculations and visualization.
 
