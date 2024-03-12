@@ -6,7 +6,7 @@ The wave function of a quantum system describes its state and provides the proba
 
 $$[ \Psi(r, \theta, \phi) = R(r) Y(\theta, \phi) \]$$
 
-where $$( r )$$, $$( \theta )$$, and $$( \phi )$$ are spherical coordinates, $$( R(r) )$$ is the radial part, and $$( Y(\theta, \phi) )$$ is the angular part.
+where (r), (theta), and (phi) are spherical coordinates, (R(r)) is the radial part, and (Y(theta, phi)) is the angular part.
 
 ## Radial and Angular Parts of the Wave Function
 
@@ -14,11 +14,11 @@ The radial part is given by:
 
 $$[ R_{n,l}(r) = \sqrt{ \left( \frac{2}{n a_0} \right)^3 \frac{(n-l-1)!}{2n[(n+l)!]^3} } e^{-\frac{r}{na_0}} \left( \frac{2r}{na_0} \right)^l L_{n-l-1}^{2l+1} \left( \frac{2r}{na_0} \right) \]$$
 
-where $$( n )$$ is the principal quantum number, $$( l )$$ is the orbital angular momentum quantum number, $$( a_0 )$$ is the Bohr radius, and $$( L_{n-l-1}^{2l+1} )$$ is the associated Laguerre polynomial.
+where \( n \) is the principal quantum number, \( l \) is the orbital angular momentum quantum number, \( a_0 \) is the Bohr radius, and \( L_{n-l-1}^{2l+1} \) is the associated Laguerre polynomial.
 
 The angular part is given by spherical harmonic functions:
 
-\[ Y_{l,m}(\theta, \phi) = (-1)^m \sqrt{ \frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!} } P_l^m(\cos(\theta)) e^{i m \phi} \]
+$$[ Y_{l,m}(\theta, \phi) = (-1)^m \sqrt{ \frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!} } P_l^m(\cos(\theta)) e^{i m \phi} \]$$
 
 where \( l \) is the orbital angular momentum quantum number, \( m \) is the magnetic quantum number, \( \theta \) is the polar angle, \( \phi \) is the azimuthal angle, and \( P_l^m \) is the associated Legendre polynomial.
 
