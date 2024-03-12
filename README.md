@@ -3,7 +3,7 @@
 # TODO
 
 -Add a better parsing to set easly m, l and n.\
--Setup the animation
+-Setup the animation.
 
 <p align="center">
 
