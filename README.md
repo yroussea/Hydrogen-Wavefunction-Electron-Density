@@ -14,7 +14,7 @@ The radial part is given by:
 
 $$[ R_{n,l}(r) = \sqrt{ \left( \frac{2}{n a_0} \right)^3 \frac{(n-l-1)!}{2n[(n+l)!]^3} } e^{-\frac{r}{na_0}} \left( \frac{2r}{na_0} \right)^l L_{n-l-1}^{2l+1} \left( \frac{2r}{na_0} \right) \]$$
 
-where \( n \) is the principal quantum number, \( l \) is the orbital angular momentum quantum number, \( a_0 \) is the Bohr radius, and \( L_{n-l-1}^{2l+1} \) is the associated Laguerre polynomial.
+where \( n \) is the principal quantum number, \( l \) is the orbital angular momentum quantum number, \( a_0 \) is the Bohr radius, and $( L_{n-l-1}^{2l+1} \)$ is the associated Laguerre polynomial.
 
 The angular part is given by spherical harmonic functions:
 
