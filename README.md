@@ -1,5 +1,10 @@
 # Hydrogen Atom Wave Function Animation
 
+# TODO
+
+-Add a better parsing to set easly m, l and n.
+-Setup the animation
+
 <p align="center">
 
 ![Figure_1](https://github.com/at0m741/Hydrogen-Wavefunction-Electron-Density/assets/20189027/d64d0e4d-aca2-4b16-b106-f2c9f9b3acdd)
