@@ -1,7 +1,7 @@
 Hydrogen Atom Wave Function Animation
 =====================================
 
-This repository contains a Python script for calculating and animating the wave function of a hydrogen atom in a 3D plot. It uses the `numpy`, `matplotlib`, and `scipy` libraries to perform the calculations and create the plot.
+This repository contains a Python script for calculating and animating the wave function of a hydrogen atom. It uses the `numpy`, `matplotlib`, and `scipy` libraries to perform the calculations and create the plot.
 
 Radial and Angular Parts of the Wave Function
 --------------------------------------------
