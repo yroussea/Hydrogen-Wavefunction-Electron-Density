@@ -2,7 +2,7 @@
 
 # TODO
 
--Add a better parsing to set easly m, l and n.
+-Add a better parsing to set easly m, l and n.\
 -Setup the animation
 
 <p align="center">
