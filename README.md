@@ -4,17 +4,17 @@ This repository contains a Python script for calculating and animating the wave 
 
 The wave function of a quantum system describes its state and provides the probability distribution for observable measurements. For a hydrogen atom, the wave function can be expressed as a product of radial and angular parts:
 
-\[ \Psi(r, \theta, \phi) = R(r) Y(\theta, \phi) \]
+$$[ \Psi(r, \theta, \phi) = R(r) Y(\theta, \phi) \]$$
 
-where \( r \), \( \theta \), and \( \phi \) are spherical coordinates, \( R(r) \) is the radial part, and \( Y(\theta, \phi) \) is the angular part.
+where $$( r )$$, $$( \theta )$$, and $$( \phi )$$ are spherical coordinates, $$( R(r) )$$ is the radial part, and $$( Y(\theta, \phi) )$$ is the angular part.
 
 ## Radial and Angular Parts of the Wave Function
 
 The radial part is given by:
 
-\[ R_{n,l}(r) = \sqrt{ \left( \frac{2}{n a_0} \right)^3 \frac{(n-l-1)!}{2n[(n+l)!]^3} } e^{-\frac{r}{na_0}} \left( \frac{2r}{na_0} \right)^l L_{n-l-1}^{2l+1} \left( \frac{2r}{na_0} \right) \]
+$$[ R_{n,l}(r) = \sqrt{ \left( \frac{2}{n a_0} \right)^3 \frac{(n-l-1)!}{2n[(n+l)!]^3} } e^{-\frac{r}{na_0}} \left( \frac{2r}{na_0} \right)^l L_{n-l-1}^{2l+1} \left( \frac{2r}{na_0} \right) \]$$
 
-where \( n \) is the principal quantum number, \( l \) is the orbital angular momentum quantum number, \( a_0 \) is the Bohr radius, and \( L_{n-l-1}^{2l+1} \) is the associated Laguerre polynomial.
+where $$( n )$$ is the principal quantum number, $$( l )$$ is the orbital angular momentum quantum number, $$( a_0 )$$ is the Bohr radius, and $$( L_{n-l-1}^{2l+1} )$$ is the associated Laguerre polynomial.
 
 The angular part is given by spherical harmonic functions:
 
