@@ -13,7 +13,7 @@
 
 
 
-This repository contains a Python script for calculating and animating the wave function of a hydrogen atom in a 3D plot. It utilizes the `numpy`, `matplotlib`, and `scipy` libraries for calculations and visualization.
+This repository contains a Python script for calculating and animating the wave function of a hydrogen atom in a plot. It utilizes the `numpy`, `matplotlib`, and `scipy` libraries for calculations and visualization.
 
 The wave function of a quantum system describes its state and provides the probability distribution for observable measurements. For a hydrogen atom, the wave function can be expressed as a product of radial and angular parts:
 
@@ -41,11 +41,11 @@ The `compute_wave_function` function calculates the wave function for specified 
 
 ## Plotting the Wave Function
 
-The `plot_wave_function` function plots the probability density using `matplotlib`'s `imshow` function, creating a 2D image of the 3D probability density. The `update` function animates the plot by updating it at each frame with the wave function and probability density for given quantum numbers and a Bohr radius scale factor.
+The `plot_wave_function` function plots the probability density using `matplotlib`'s `imshow` function, creating a 2D image of the probability density. The `update` function animates the plot by updating it at each frame with the wave function and probability density for given quantum numbers and a Bohr radius scale factor.
 
 ## Running the Script
 
-Execute the `main` function in a Python environment to run the script. The output is a 3D plot of the wave function and probability density for the specified quantum numbers and Bohr radius scale factor. The plot is animated with a time-dependent wave function.
+Execute the `main` function in a Python environment to run the script. The output is a plot of the wave function and probability density for the specified quantum numbers and Bohr radius scale factor. The plot is animated with a time-dependent wave function.
 
 ## Dependencies
 
