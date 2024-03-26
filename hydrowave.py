@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore")
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -43,7 +46,7 @@ def compute_wave_function(n, l, m, a_0_scale_factor, t=0):
     psi_lm = angular_function(l, m, np.arctan2(np.sqrt(x**2 + z**2), z), np.arctan2(x, z))
 
     psi = psi_rl * psi_lm
-    print(psi)
+    # print(psi)
     return psi
 
 def compute_probability_density(psi):
@@ -61,9 +64,11 @@ def plot_wave_function(psi, probability_density, n, l, m, ax):
     
     ax.imshow(probability_density, cmap='magma', extent=(-480, 480, -480, 480))
 
-def update(frame, args, a_0_scale_factor):
+def update(frame, args, a_0_scale_factor, anim):
     global psi, probability_density
     t = frame * 0.01
+    if anim:
+        args = (args[0] + int(t * 20), args[1] + int(t * 20), args[2])
     n, l, m = args
     psi = compute_wave_function(n, l, m, a_0_scale_factor, t)
     probability_density = compute_probability_density(psi)
@@ -77,8 +82,9 @@ def main():
     plt.style.use('dark_background')
     fig, ax = plt.subplots()
     #bar = plt.colorbar(ax.imshow(probability_density, cmap='magma', extent=(-480, 480, -480, 480)))
-    args = (4, 3, 0)
-    ani = animation.FuncAnimation(fig, update, frames=1000, interval=10, blit=False, fargs=(args, a_0_scale_factor,))
+    args = (1, 0, 0)
+    anim = True
+    ani = animation.FuncAnimation(fig, update, frames=50, interval=10, blit=False, fargs=(args, a_0_scale_factor, anim,))
 
 	# etc.
 
