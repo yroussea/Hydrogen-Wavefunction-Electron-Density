@@ -85,7 +85,7 @@ def update(frame, args, a_0_scale_factor, anim, max_frame):
         print(n, l, m)
     else:
         n, l, m = args[0]
-    psi = compute_wave_function(n, l, m, (66 - 65 * frame / max_frame), t)
+    psi = compute_wave_function(n, l, m, (3), t)
     probability_density = compute_probability_density(psi)
     plot_wave_function(psi, probability_density, ax)
 
@@ -98,8 +98,8 @@ def main():
     plt.style.use('dark_background')
     fig, ax = plt.subplots()
     #bar = plt.colorbar(ax.imshow(probability_density, cmap='magma', extent=(-480, 480, -480, 480)))
-    steps = [(10, 0, 0),
-             (10, 9, 0)]
+    steps = [(10, 3, 0),
+             (10, 7, 0)]
     anim = True
     ani = animation.FuncAnimation(fig, update, frames=max_frame, interval=10, blit=False, fargs=(steps, a_0_scale_factor, anim, max_frame,))
 
