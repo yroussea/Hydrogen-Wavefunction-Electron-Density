@@ -1,5 +1,6 @@
 import warnings
 warnings.filterwarnings("ignore")
+import  parsing
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +16,7 @@ def radial_function(n, l, r, a0):
 
     laguerre = scipy.special.genlaguerre(int(n-l-1), 2*l+1)
     p = 2*r/(n*a0)
-    constant_factor = np.sqrt((2/(n*a0))**3 * np.math.factorial(round(n-l-1))/(2*n*np.math.factorial(round(n+l))))
+    constant_factor = np.sqrt((2/(n*a0))**3 * np.math.gamma(n-l)/(2*n*np.math.gamma(n+l+1)))
 
     return constant_factor * np.exp(-p/2) * p**l * laguerre(p)
 
@@ -24,7 +25,7 @@ def angular_function(l, m, theta, phi):
     #Y_{l,m}(\theta, \phi) = (-1)^m \sqrt{ \frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!} } P_l^m(\cos(\theta)) e^{i m \phi}
 
     legendre = scipy.special.lpmv(m, l, np.cos(theta))
-    constant_factor = ((-1)**m) * np.sqrt((2*l+1)/(4*np.pi) * np.math.factorial(round(l-m))/np.math.factorial(round(l+m)))
+    constant_factor = ((-1)**m) * np.sqrt((2*l+1)/(4*np.pi) * np.math.gamma(l-m+1)/np.math.gamma(l+m+1))
 
     return constant_factor * legendre * np.exp(1j*m*phi)
 
@@ -47,12 +48,13 @@ def compute_wave_function(n, l, m, a_0_scale_factor, t=0):
 
     psi = psi_rl * psi_lm
     # print(psi)
+
     return psi
 
 def compute_probability_density(psi):
     return abs(psi)**2
 
-def plot_wave_function(psi, probability_density, ax):
+def plot_wave_function(psi, probability_density, ax, color='magma'):
     ax.clear()
     ax.set_aspect('equal')
     ax.axis('off')
@@ -62,7 +64,7 @@ def plot_wave_function(psi, probability_density, ax):
         #add color bar
     ax = plt.gca()
     
-    ax.imshow(probability_density, cmap='magma', extent=(-480, 480, -480, 480))
+    ax.imshow(probability_density, cmap=color, extent=(-480, 480, -480, 480))
 
 def get_step(frame, max_frame, steps):
     def percent():
@@ -76,34 +78,30 @@ def get_step(frame, max_frame, steps):
     return (a_from + a_smooth * (frame % x))
 
 
-def update(frame, args, a_0_scale_factor, anim, max_frame):
+def update(frame, args, max_frame):
     global psi, probability_density
     t = frame * 0.01
-    if anim:
-        n, l, m = get_step(frame, max_frame, args)
-        m = round(m)
-        print(n, l, m)
+
+    if len(args) > 1:
+        n, l, m, a_0_scale_factor = get_step(frame, max_frame, args)
     else:
-        n, l, m = args[0]
-    psi = compute_wave_function(n, l, m, (66 - 65 * frame / max_frame), t)
+        n, l, m, a_0_scale_factor = args[0]
+
+    psi = compute_wave_function(n, l, m, a_0_scale_factor, t)
     probability_density = compute_probability_density(psi)
     plot_wave_function(psi, probability_density, ax)
 
 def main():
     global ax
 
-    a_0_scale_factor = 10
-    max_frame = 100
-
     plt.style.use('dark_background')
     fig, ax = plt.subplots()
-    #bar = plt.colorbar(ax.imshow(probability_density, cmap='magma', extent=(-480, 480, -480, 480)))
-    steps = [(10, 0, 0),
-             (10, 9, 0)]
-    anim = True
-    ani = animation.FuncAnimation(fig, update, frames=max_frame, interval=10, blit=False, fargs=(steps, a_0_scale_factor, anim, max_frame,))
 
-	# etc.
+    max_frame = 100
+    steps = parsing.open_file()
+
+
+    ani = animation.FuncAnimation(fig, update, frames=max_frame, interval=10, blit=False, fargs=(steps, max_frame,))
 
     plt.show()
 
