@@ -86,11 +86,7 @@ def update(frame, args, max_frame):
 
     if len(args) > 1:
         n, l, m, a_0_scale_factor = get_step(frame, max_frame, args)
-    else:
-        n, l, m, a_0_scale_factor = args[0]
-
-    psi = compute_wave_function(n, l, int(m), a_0_scale_factor, t)
-    probability_density = compute_probability_density(psi)
+x    probability_density = compute_probability_density(psi)
     plot_wave_function(psi, probability_density, ax)
 
 
@@ -184,7 +180,7 @@ def main():
 
     if not (len(sys.argv) > 1 and sys.argv[1] == "slider"):
         fig, ax = plt.subplots(figsize=(12, 10))
-        max_frame = 100
+        max_frame = 200
         steps = parsing.open_file()
         ani = animation.FuncAnimation(fig, update, frames=max_frame, interval=10, blit=False, fargs=(steps, max_frame,))
 
