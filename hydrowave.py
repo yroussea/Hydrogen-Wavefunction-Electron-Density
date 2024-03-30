@@ -86,7 +86,7 @@ def update(frame, args, max_frame):
 
     if len(args) > 1:
         n, l, m, a_0_scale_factor = get_step(frame, max_frame, args)
-x    probability_density = compute_probability_density(psi)
+    probability_density = compute_probability_density(psi)
     plot_wave_function(psi, probability_density, ax)
 
 
