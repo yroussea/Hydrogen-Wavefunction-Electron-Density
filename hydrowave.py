@@ -69,6 +69,8 @@ def plot_wave_function(psi, probability_density, ax, color='magma'):
     ax.imshow(probability_density, cmap=color, extent=(-480, 480, -480, 480))
 
 def get_step(frame, max_frame, steps):
+    if len(steps) == 1:
+        return steps[0]
     def percent():
         return frame / max_frame * 100
     def from_to(x):
@@ -84,8 +86,8 @@ def update(frame, args, max_frame):
     global psi, probability_density
     t = frame * 0.01
 
-    if len(args) > 1:
-        n, l, m, a_0_scale_factor = get_step(frame, max_frame, args)
+    n, l, m, a_0_scale_factor = get_step(frame, max_frame, args)
+    psi = compute_wave_function(n, l, int(m), a_0_scale_factor)
     probability_density = compute_probability_density(psi)
     plot_wave_function(psi, probability_density, ax)
 
